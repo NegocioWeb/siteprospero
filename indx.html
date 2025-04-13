@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Descubra seu Poder Interior</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #ffe6f0, #ffffff);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #ff69b4;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      width: 100%;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #ff3399;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Descubra o que seu interior revela</h1>
+    <form id="formulario">
+      <label for="nome">Seu nome</label>
+      <input type="text" name="nome" id="nome" placeholder="Ex: Maria" required />
+
+      <label for="objetivo">Qual o seu objetivo?</label>
+      <select name="objetivo" id="objetivo" required>
+        <option value="" disabled selected>Selecione uma opção</option>
+        <option value="Lei da Atração">Lei da Atração</option>
+        <option value="Signos">Signos</option>
+        <option value="Ganhar Dinheiro">Ganhar Dinheiro</option>
+      </select>
+
+      <label for="signo" id="label-signo" class="hidden">Seu signo</label>
+      <select name="signo" id="campo-signo" class="hidden">
+        <option value="" disabled selected>Selecione seu signo</option>
+        <option>Áries</option>
+        <option>Touro</option>
+        <option>Gêmeos</option>
+        <option>Câncer</option>
+        <option>Leão</option>
+        <option>Virgem</option>
+        <option>Libra</option>
+        <option>Escorpião</option>
+        <option>Sagitário</option>
+        <option>Capricórnio</option>
+        <option>Aquário</option>
+        <option>Peixes</option>
+      </select>
+
+      <label for="meta">Sua meta principal</label>
+      <input type="text" name="meta" id="meta" placeholder="Ex: Ter liberdade financeira" required />
+
+      <label for="bloqueio">Seu maior bloqueio</label>
+      <input type="text" name="bloqueio" id="bloqueio" placeholder="Ex: Medo de falhar" required />
+
+      <button type="submit">Gerar meu conteúdo</button>
+    </form>
+  </div>
+
+  <script>
+    const objetivo = document.getElementById('objetivo');
+    const campoSigno = document.getElementById('campo-signo');
+    const labelSigno = document.getElementById('label-signo');
+
+    objetivo.addEventListener('change', function () {
+      if (objetivo.value === 'Signos') {
+        campoSigno.classList.remove('hidden');
+        labelSigno.classList.remove('hidden');
+        campoSigno.setAttribute('required', 'required');
+      } else {
+        campoSigno.classList.add('hidden');
+        labelSigno.classList.add('hidden');
+        campoSigno.removeAttribute('required');
+        campoSigno.value = '';
+      }
+    });
+
+    document.getElementById('formulario').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Redirecionamento para o Hotmart (altere com seu link real)
+      window.location.href = "https://go.hotmart.com/seu-produto";
+    });
+  </script>
+</body>
+</html>
